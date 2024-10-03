@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /.bsp/
 target/
 .metals
 .vscode
+=======
+*.class
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> a34645557db9d9ffc9466a8fe08a688161d30c82
