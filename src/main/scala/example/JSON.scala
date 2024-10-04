@@ -2,7 +2,7 @@ package example
 
 import org.apache.spark.sql.SparkSession
 
-object SimpleApp{
+object SimpleJSONApp{
   def main(args: Array[String]): Unit = {
     println("greeting")
     val spark = SparkSession.builder()
@@ -11,9 +11,10 @@ object SimpleApp{
       .getOrCreate()
 
       val dataframe = spark.read
-      .option("header", value = "true")
-      .csv("data/AAPL.csv")
+      .option("multiline", true)
+      .json("data/patients.json")
 
       dataframe.show()// prints 20 row by default
+      dataframe.printSchema() // prints the schema of the dataframe
   }
 }
